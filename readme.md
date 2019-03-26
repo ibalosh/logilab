@@ -1,4 +1,4 @@
-# 🧠 dsalgo
+# 🧠 MindGym
 
 [![Language](https://img.shields.io/badge/language-JavaScript-yellow?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
