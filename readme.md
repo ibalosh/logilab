@@ -1,6 +1,7 @@
 # 🧠 MindGym
 
 [![Language](https://img.shields.io/badge/language-JavaScript-yellow?logo=javascript)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE.txt)
 [![LeetCode Practice](https://img.shields.io/badge/leetcode-practice-orange?logo=leetcode)](https://leetcode.com/)
 
 Welcome to `mindgym` — a personal collection of algorithmic coding challenges, I play with in free time. 
