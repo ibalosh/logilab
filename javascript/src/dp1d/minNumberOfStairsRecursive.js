@@ -38,45 +38,27 @@
  * @return {number}
  */
 let minCostClimbingStairs = function(cost) {
-  let minimumCost = [0,0];
+  function minimumCost(i,cost,memoHash) {
+    if (i<=1) return 0;
+    if (memoHash[i] !== undefined) {
+      return memoHash[i];
+    }
 
-  for (let i = 2; i <= cost.length; i++) {
-    let oneMove = cost[i-1] + minimumCost[i-1];
-    let twoMove = cost[i-2] + minimumCost[i-2];
-    minimumCost[i] = Math.min(oneMove, twoMove);
+    let oneStep = cost[i-1] + minimumCost(i-1, cost, memoHash);
+    let twoStep = cost[i-2] + minimumCost(i-2, cost, memoHash);
+    memoHash[i] = Math.min(oneStep, twoStep);
+
+    return memoHash[i];
   }
 
-  return minimumCost[cost.length];
+  return minimumCost(cost.length, cost, {});
 };
+
 
 //0 1 2 3 4 5
 //0 0 0 1 2 4
 let cost = [10,15,20]
 console.log(minCostClimbingStairs(cost));
-
-cost = [1,100,1,1,1,100,1,1,100,1];
-console.log(minCostClimbingStairs(cost));
-
-cost = [0,2,2,1];
-console.log(minCostClimbingStairs(cost));
-
-let minCostClimbingStairsOptimized = function(cost) {
-  let minimumFirst = 0;
-  let minimumSecond = 0;
-
-  for (let i = 2; i <= cost.length; i++) {
-    let oneMove = cost[i-1] + minimumFirst
-    let twoMove = cost[i-2] + minimumSecond
-
-    minimumSecond = minimumFirst;
-    minimumFirst = Math.min(oneMove, twoMove);
-  }
-
-  return minimumFirst
-};
-
-cost = [10,15,20]
-console.log(minCostClimbingStairsOptimized(cost));
 
 cost = [1,100,1,1,1,100,1,1,100,1];
 console.log(minCostClimbingStairs(cost));
