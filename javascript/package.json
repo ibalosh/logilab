@@ -1,6 +1,14 @@
 {
-  "name": "Data Structures and Algorithms",
-  "author": "Igor Balos",
-  "type" : "module",
-  "dependencies": {}
+  "name": "javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "private": true
 }
