@@ -1,6 +1,4 @@
 export default class Queue {
-
-
   constructor() {
     this.items = {}
     this.frontIndex = 0;
@@ -12,7 +10,7 @@ export default class Queue {
     this.backIndex++;
   }
 
-  deQueue(value) {
+  deQueue() {
     const returnItem = this.items[this.frontIndex];
     delete this.items[this.frontIndex];
     this.frontIndex++;
@@ -25,5 +23,21 @@ export default class Queue {
 
   isEmpty() {
     return this.frontIndex === this.backIndex;
+  }
+
+  empty() {
+    return this.isEmpty();
+  }
+
+  push(value) {
+    this.enQueue(value);
+  }
+
+  pop() {
+    return this.deQueue();
+  }
+
+  top() {
+    return this.peek();
   }
 }

@@ -1,5 +1,5 @@
 import Stack from "./stack.js"
-import Queue from "./queue.js"
+import Queue from "../queue/queue.js"
 
 let reverseStackUsingQueue = function (stack) {
   let queue = new Queue();
