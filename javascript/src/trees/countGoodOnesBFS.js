@@ -39,7 +39,7 @@ import {TreeNode} from "./TreeNode.js";
  *
  *
  * Runtime: O(n)
- * Space: O(n) 
+ * Space: O(n)
  *
  * @param {TreeNode} root
  * @return {number}
