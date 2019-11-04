@@ -24,6 +24,6 @@ function insertionSort(arr) {
 console.log(insertionSort([5,4,3,2,1]));
 console.log(insertionSort([0,8,6,2,1]));
 console.log(insertionSort([0,8,6,2,8]));
-
+console.log(insertionSort([5,4,6,2,0]));
 
 
