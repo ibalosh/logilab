@@ -40,8 +40,6 @@ counter();
 counter();
 counter();
 
-
-
 function fib(n) {
   let fib = [0,1];
 
