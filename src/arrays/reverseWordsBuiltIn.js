@@ -41,34 +41,12 @@
  * @param {string} wordsString
  * @return {string}
  */
-let reverseWords = function(wordsString) {
-  if (wordsString.length < 1) { return ""}
+let reverseWordsBuiltIn = function(wordsString) {
+  wordsString = wordsString.trim();
 
-  let words = [];
-
-  for (let i = 0; i < wordsString.length; i++) {
-    let word = "";
-    while (wordsString.charAt(i) === " " && i < wordsString.length)
-      i++;
-
-    while (wordsString.charAt(i) !== " " && i < wordsString.length) {
-      word += wordsString.charAt(i);
-      i++;
-    }
-
-    if (word.length > 0)
-      words.push(word);
-  }
-
-  let reversedWord = ""
-  while (words.length > 1) {
-   reversedWord+= words.pop() + " ";
-  }
-
-  reversedWord+= words.pop();
-
-  return reversedWord;
+  let words = wordsString.split(/\s+/);
+  return words.reverse().join(" ");
 };
 
 let words = "the sky is blue"
-console.log(reverseWords(words));
+console.log(reverseWordsBuiltIn(words));
