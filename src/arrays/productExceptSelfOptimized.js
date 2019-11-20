@@ -24,6 +24,9 @@
  * The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
  * -------------------------------------------------------------
  *
+ * Optimized version of the previous solution where one less array is used,
+ * still same space complexity though.
+ *
  * Space complexity: O(n)
  * Runtime complexity: O(n)
  *
@@ -32,25 +35,19 @@
  */
 let productExceptSelf = function(nums) {
   let leftMultipliedNums = Array(nums.length).fill(1);
-  let rightMultipliedNums = Array(nums.length).fill(1);
 
   for (let i = 1; i < nums.length; i++) {
     leftMultipliedNums[i] = leftMultipliedNums[i-1] * nums[i-1];
   }
 
-  console.log(`Array of multiplied numbers from left: ${leftMultipliedNums}`);
-
-  for (let i = nums.length-2; i >= 0; i--) {
-    rightMultipliedNums[i] = rightMultipliedNums[i+1] * nums[i+1];
+  let currentProductFromRight = 1;
+  let answer = Array(nums.length).fill(1);
+  for (let i = nums.length-1; i >= 0; i--) {
+    currentProductFromRight = (i<nums.length-1) ? currentProductFromRight * nums[i+1] : currentProductFromRight;
+    answer[i] = currentProductFromRight * leftMultipliedNums[i];
   }
 
-  console.log(`Array of multiplied numbers from right: ${rightMultipliedNums}`);
-
-  return Array(nums.length)
-    .fill(1)
-    .map((_, i) =>
-      leftMultipliedNums[i] * rightMultipliedNums[i]
-    );
+  return answer;
 };
 
 // Test example runs
