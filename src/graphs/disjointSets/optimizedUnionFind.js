@@ -28,7 +28,7 @@ class UnionFind {
         this.root[rootY] = rootX;
       }
       else if (this.rank[rootX] < this.rank[rootY]) {
-        this.rank[rootX] = rootY;
+        this.root[rootX] = rootY;
       }
       else {
         this.root[rootY] = rootX;
