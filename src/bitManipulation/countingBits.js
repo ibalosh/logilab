@@ -24,4 +24,4 @@ let countBits = function(n) {
 };
 
 
-console.log(countBits(0));
+console.log(countBits(2));

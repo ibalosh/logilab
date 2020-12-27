@@ -73,6 +73,7 @@ let pivotIndex = function(nums) {
   return -1;
 };
 
+
 let nums = [1,7,3,6,5,6];
 console.log(pivotIndex(nums));
 

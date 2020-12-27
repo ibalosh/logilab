@@ -37,19 +37,19 @@ let rightSideView = function(root) {
   let rightSide = []
 
   // next level queue
-  let nextLevel = [root];
+  let queue = [root];
   let currentLevel = [];
 
-  while (nextLevel.length > 0) {
-    currentLevel = nextLevel;
-    nextLevel = [];
+  while (queue.length > 0) {
+    currentLevel = queue;
+    queue = [];
 
     let node = null;
     while (currentLevel.length > 0) {
       node = currentLevel.shift();
 
-      if (node.left !== null) nextLevel.push(node.left);
-      if (node.right !== null) nextLevel.push(node.right);
+      if (node.left !== null) queue.push(node.left);
+      if (node.right !== null) queue.push(node.right);
     }
 
     rightSide.push(node.val);
