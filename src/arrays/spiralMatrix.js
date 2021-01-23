@@ -46,4 +46,5 @@ let generateMatrix = function(n) {
   return matrix;
 };
 
+console.log(generateMatrix(3));
 console.log(generateMatrix(4));
