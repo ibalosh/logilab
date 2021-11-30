@@ -16,3 +16,5 @@ javascript/.pnp
 .vscode/*
 .idea
 .DS_Store
+src/test.js
+test.js
