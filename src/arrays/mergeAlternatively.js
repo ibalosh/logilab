@@ -42,12 +42,14 @@
  * word1 and word2 consist of lowercase English letters.
  *
  * -----------------------------------------------------------------------------
+ * Runtime complexity: O(n + m) - n, m - word1 and word2
+ * Space complexity: O(n + m)
  *
  * @param {string} word1
  * @param {string} word2
  * @return {string}
  */
-let mergeAlternately = function(word1, word2) {
+const mergeAlternatelyFirstTry = function(word1, word2) {
   let mergedWord = "";
 
   let counter=0;
@@ -69,6 +71,23 @@ let mergeAlternately = function(word1, word2) {
   }
 
   return mergedWord;
+}
+
+/*
+ * @param {string} word1
+ * @param {string} word2
+ * @return {string}
+ */
+function mergeAlternately(word1,word2) {
+  const wordLength = Math.max(word1.length, word2.length);
+  let word = "";
+
+  for (let i=0;i< wordLength;i++) {
+    word += word1.charAt(i);
+    word += word2.charAt(i);
+  }
+
+  return word;
 }
 
 let word1 = "abc";
