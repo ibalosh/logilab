@@ -1,5 +1,6 @@
 {
+  "name": "Data Structures and Algorithms",
+  "author": "Igor Balos",
   "type" : "module",
-  "dependencies": {
-  }
+  "dependencies": {}
 }

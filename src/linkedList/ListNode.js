@@ -7,10 +7,24 @@ export function createList(array) {
   let listHead = new ListNode(array[0]);
   let list = listHead;
 
-  for (let i = 1; i < array.length; i++) {
+  for (let i = 0; i < array.length; i++) {
     list.next = new ListNode(array[i]);
     list = list.next;
   }
 
-  return listHead;
+  return listHead.next;
+}
+
+export function printList(head) {
+  if (head == null) return null;
+
+  let array = [head];
+
+  while (head.next) {
+    array.push(head.next);
+    head = head.next;
+  }
+
+  console.log(array.map(node => node.val))
+  return array;
 }
