@@ -23,9 +23,19 @@ public class Main {
         //linkedListExcersises();
         //linkedListCircularExcercise();
         //recursionExcersises();
-        hashMapExcersises();
+        //hashMapExcersises();
+        queueExcercises();
     }
 
+    public static void queueExcercises() {
+        MyStack stack = new MyStack();
+        stack.push(1);
+        stack.push(2);
+        System.out.println(stack.top());
+        System.out.println(stack.pop());
+        System.out.println(stack.pop());
+        System.out.println(stack.empty());
+    }
     public static void hashMapExcersises() {
         String word1 = "abbzzca";
         String word2 = "babzzcz";
