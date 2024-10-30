@@ -2,7 +2,7 @@
  * Leaf-Similar Trees
  * ----------------------
  * https://leetcode.com/problems/leaf-similar-trees/description/?envType=study-plan-v2&envId=leetcode-75
- * 
+ *
  * Consider all the leaves of a binary tree, from left to right order, the values of those leaves form a leaf value sequence.
  *
  *
@@ -42,27 +42,27 @@ import {TreeNode} from "./TreeNode.js";
  * @return {boolean}
  */
 let leafSimilar = function(root1, root2) {
-  function findLeavesDFS(node, leaves) {
+  function dfs(node, leaves) {
     if (node !== null) {
       if (node.left === null && node.right === null) {
         leaves.push(node.val);
       }
-
-      findLeavesDFS(node.left, leaves);
-      findLeavesDFS(node.right, leaves);
+      dfs(node.left, leaves);
+      dfs(node.right, leaves);
     }
   }
 
   let leaves1 = [];
   let leaves2 = [];
 
-  findLeavesDFS(root1, leaves1);
-  findLeavesDFS(root2, leaves2);
+  dfs(root1, leaves1);
+  dfs(root2, leaves2);
 
   return (
-    leaves1.length == leaves2.length &&
-    leaves1.every((value,index) => leaves2[index] === value)
+    leaves1.length === leaves2.length &&
+      leaves1.every((value, index) => leaves2[index] === value)
   )
+
 };
 
 let tree = new TreeNode(
