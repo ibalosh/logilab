@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {number[]} arr
+ * @returns {number[]}
+ */
 function insertionSort(arr) {
   function swap(arr, i, j) {
     let temp = arr[i];

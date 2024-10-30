@@ -1,3 +1,8 @@
+/**
+ *
+ * @param {number[]} arr
+ * @returns {number[]}
+ */
 function selectionSort(arr) {
   function swap(arr, i, j) {
     let temp = arr[i];
