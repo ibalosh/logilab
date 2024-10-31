@@ -1,4 +1,4 @@
-import {TreeNode} from "./TreeNode.js";
+import {TreeNode, treeFromArray} from "./TreeNode.js";
 
 /**
  * @param {TreeNode} root
@@ -42,3 +42,6 @@ let tree = new TreeNode(
 );
 
 console.log(lowestCommonAncestor(tree, new TreeNode(5), new TreeNode(1)))
+
+let treeFromArr = treeFromArray([3,5,1,6,2,0,8,null,null,7,4]);
+console.log(lowestCommonAncestor(treeFromArr, new TreeNode(5), new TreeNode(1)));
