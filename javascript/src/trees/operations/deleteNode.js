@@ -13,7 +13,8 @@ function deleteNode(node, val) {
   if (node == null) {
     return null;
   }
-  else if (node.val > val) {
+
+  if (node.val > val) {
     node.left = deleteNode(node.left, val);
   }
   else if (node.val < val) {
@@ -27,12 +28,11 @@ function deleteNode(node, val) {
       return node.left;
     }
     else {
-      let succ = getSuccessor(node);
-      node.val = succ.val;
-      node.right = deleteNode(node.right, succ.val);
+      let cur = getSuccessor(node);
+      node.val = cur.val;
+      node.right = deleteNode(node.right, cur.val);
     }
   }
-
   return node;
 }
 
