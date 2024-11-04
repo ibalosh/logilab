@@ -39,3 +39,7 @@ let arr= [4,3,6,1,5];
 quickSort(arr);
 console.log(arr);
 
+
+arr= [4,3,6,2,0];
+quickSort(arr);
+console.log(arr);
