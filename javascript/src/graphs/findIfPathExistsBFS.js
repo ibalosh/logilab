@@ -44,18 +44,24 @@
  * @return {boolean}
  */
 let validPath = function(n, edges, source, destination) {
-  let neighbours = {}
+  function transformToAdjacentList(n, edges) {
+    let neighbours = {}
+
+    for (let i=0;i< n;i++) {
+      neighbours[i] = [];
+    }
+
+    for (let i = 0; i < edges.length; i++) {
+      neighbours[edges[i][0]].push(edges[i][1]);
+      neighbours[edges[i][1]].push(edges[i][0]);
+    }
+
+    return neighbours;
+  }
+
+  let neighbours = transformToAdjacentList(n, edges);
   let queue = [];
   let visited = new Array(n);
-
-  for (let i=0;i< n;i++) {
-    neighbours[i] = [];
-  }
-
-  for (let i = 0; i < edges.length; i++) {
-    neighbours[edges[i][0]].push(edges[i][1]);
-    neighbours[edges[i][1]].push(edges[i][0]);
-  }
 
   queue.push(source);
 
