@@ -41,3 +41,23 @@ counter();
 counter();
 
 
+
+function fib(n) {
+  let fib = [0,1];
+
+  let i=2;
+  while (i <= n) {
+      fib.push(fib[i-1] + fib[i-2]);
+      i++;
+  }
+  return fib;
+}
+function fibRec(n) {
+  if (n === 0) return 0;
+  if (n === 1) return 1;
+  return fibRec(n - 1) + fibRec(n - 2);
+}
+
+console.log("fib");
+console.log(fib(5));
+fibRec(5);
