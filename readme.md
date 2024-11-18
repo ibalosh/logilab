@@ -1,3 +1,3 @@
 ## Data structures and algorithms
 
-Practice examples
+Practice examples written in Javascript.
